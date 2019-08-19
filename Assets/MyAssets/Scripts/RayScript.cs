@@ -20,9 +20,7 @@ public class RayScript : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(ray,out hit))
             {
-                //Debug.Log(hit.collider.gameObject.name);
                    hit.collider.gameObject.SendMessage("CallMessage");
-                //Debug.DrawRay(transform.position, hit.point);
             }
         }
     }
@@ -33,5 +31,9 @@ public class RayScript : MonoBehaviour
     public void DisableSound()
     {
         _audio.mute = true;
+    }
+    public void EnableSound()
+    {
+        _audio.mute = false;
     }
 }
